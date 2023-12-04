@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script>
+        function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type == "password") {
+      x.type = "text";
+    } else{
+      x.type = "password";
+    }
+    
+  }
+ 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <div class="form-box">
+                <div class="form">
+                    <h2>REGISTRATION FORM</h2>
+                    <form action="/" method="post">
+                            {% csrf_token %}
+
+                        <div class="inputbox" >
+                            <input type="text" name ="fnamee" required>
+                            <label for="name">First name</label>
+                        </div>
+                        <div class="inputbox">
+                            <input type="text" name="lastname" required>
+                            <label for="">Last name</label>
+                        </div>
+                        <div class="inputbox">
+                            <input type="email" name="mail" required>
+                            <label for="">Mail id</label>
+                        </div>
+                        <div class="inputbox" >
+                            <input type="password" id="myInput" name="password" required>
+                            <label for="">Password</label>
+                            <p id="demo"></p>
+
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox"  onclick="myFunction();">
+                            <label>  Show password</label>
+                        </div>
+                       
+                        <div class="btn" >
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
